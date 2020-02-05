@@ -84,6 +84,32 @@ function validateConfiguration(_ref) {
   }
 }
 
+function getUrl(url, process) {
+  if (typeof url === 'string') {
+    return url;
+  }
+
+  var _url = void 0;
+
+  if (url[process.platform]) {
+    _url = url[process.platform];
+  } else {
+    _url = url.default;
+  }
+
+  if (typeof _url === 'string') {
+    return _url;
+  }
+
+  if (_url[process.arch]) {
+    _url = _url[process.arch];
+  } else {
+    _url = _url.default;
+  }
+
+  return _url;
+}
+
 function parsePackageJson() {
   if (!(process.arch in ARCH_MAPPING)) {
     console.error('Installation is not supported for this architecture: ' + process.arch);
@@ -112,8 +138,13 @@ function parsePackageJson() {
   // We have validated the config. It exists in all its glory
   var binPath = packageJson.goBinary.path;
   var binName = packageJson.goBinary.name;
-  var url = packageJson.goBinary.url;
+  var url = getUrl(packageJson.goBinary.url, process);
   var version = packageJson.version;
+
+  if (!url) {
+    console.error('Could not find url matching platform and architecture');
+    return;
+  }
 
   if (version[0] === 'v') version = version.substr(1); // strip the 'v' if necessary v0.0.1 => 0.0.1
 
@@ -140,4 +171,4 @@ function parsePackageJson() {
   };
 }
 
-module.exports = { parsePackageJson: parsePackageJson, getInstallationPath: getInstallationPath };
+module.exports = { parsePackageJson: parsePackageJson, getUrl: getUrl, getInstallationPath: getInstallationPath };
