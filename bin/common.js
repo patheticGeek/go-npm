@@ -92,8 +92,8 @@ function getUrl(url, process) {
 
   var _url = void 0;
 
-  if (url[process.platform]) {
-    _url = url[process.platform];
+  if (url[PLATFORM_MAPPING[process.platform]]) {
+    _url = url[PLATFORM_MAPPING[process.platform]];
   } else {
     _url = url.default;
   }
@@ -102,8 +102,8 @@ function getUrl(url, process) {
     return _url;
   }
 
-  if (_url[process.arch]) {
-    _url = _url[process.arch];
+  if (_url[ARCH_MAPPING[process.arch]]) {
+    _url = _url[ARCH_MAPPING[process.arch]];
   } else {
     _url = _url.default;
   }
