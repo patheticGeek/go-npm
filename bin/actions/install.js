@@ -17,6 +17,8 @@ function getStrategy(_ref) {
 
     if (url.endsWith('.tar.gz')) {
         return require('../assets/untar');
+    } else if (url.endsWith('.zip')) {
+        return require('../assets/unzip');
     } else {
         return require('../assets/move');
     }

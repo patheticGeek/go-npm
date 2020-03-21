@@ -21,9 +21,6 @@ function untar(_ref) {
 
   ungz.on('error', onError);
   untar.on('error', onError);
-
-  // First we will Un-GZip, then we will untar. So once untar is completed,
-  // binary is downloaded into `binPath`. Verify the binary and call it good
   untar.on('end', onSuccess);
 
   req.pipe(ungz).pipe(untar);
