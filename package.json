@@ -1,5 +1,5 @@
 {
-  "name": "@gzuidhof/go-npm",
+  "name": "@patheticGeek/go-npm",
   "version": "0.1.13",
   "description": "Distribute and install Go binaries via NPM",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "scripts": {
     "test": "jest",
     "build": "rm -rf ./bin && esbuild --bundle src/index.js --outfile=\"./bin/index.js\" --platform=node --target=es6 --minify-whitespace",
-    "prepublishOnly": "npm i && npm run build"
+    "prepublishOnly": "pnpm run build"
   },
   "author": "Sanath Kumar Ramesh <dayanandasaraswati@gmail.com>",
   "license": "Apache-2.0",
