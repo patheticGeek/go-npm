@@ -5,6 +5,8 @@ Installation:
 npm i @patheticgeek/go-npm
 ```
 
+For a sample package json check `./example/package.json`
+
 ### (@patheticgeek): MODIFICATIONS FROM BASE `@gzuidhof/go-npm` PACKAGE
 
 * Dont install anything, just download the binary in bin folder and have a `"bin": { "exec-name": "./bin/exec-name" }` entry in package.json
