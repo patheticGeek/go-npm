@@ -1,5 +1,5 @@
 {
-  "name": "@patheticGeek/go-npm",
+  "name": "@patheticgeek/go-npm",
   "version": "0.1.13",
   "description": "Distribute and install Go binaries via NPM",
   "main": "index.js",
