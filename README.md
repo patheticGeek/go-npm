@@ -1,10 +1,21 @@
 ## Go NPM
 
+Installation:
+```
+npm i @patheticgeek/go-npm
+```
+
+### (@patheticgeek): MODIFICATIONS FROM BASE `@gzuidhof/go-npm` PACKAGE
+
+* Dont install anything, just download the binary in bin folder and have a `"bin": { "exec-name": "./bin/exec-name" }` entry in package.json
+
+This is so your project can be directly run via npx and npm will take care of where to put the binary rather than you having to own that logic.
+
 ### (@gzuidhof): MODIFICATIONS FROM BASE `go-npm` PACKAGE
 * Support for zip and non-compressed binaries.
 * Added support for `arm64` architecture.
 * Fix for use on Windows platform (the binary would get placed in the wrong place for consumers).
-* Shipped as a bundle using `esbuild`, removing 70 packages of dependencies (including huge things like Babel). Now your users will only have to download one additional package (`@guidhof/go-npm`).
+* Shipped as a bundle using `esbuild`, removing 70 packages of dependencies (including huge things like Babel). Now your users will only have to download one additional package (`@gzuidhof/go-npm`).
 
 ### Distribute cross-platform Go binaries via NPM
 
