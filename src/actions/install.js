@@ -32,8 +32,6 @@ function install(callback) {
 
   mkdirp.sync(opts.binPath);
 
-  console.log('Downloading from URL: ' + opts.url);
-
   const req = request({ uri: opts.url });
 
   req.on('error', () => callback('Error downloading from URL: ' + opts.url));
@@ -45,7 +43,7 @@ function install(callback) {
       strategy({
           opts,
           req,
-          onSuccess: () => verifyAndPlaceBinary(opts.binName, opts.binPath, callback),
+          onSuccess: () => {},
           onError: callback
       });
   });
