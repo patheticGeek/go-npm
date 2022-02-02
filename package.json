@@ -1,6 +1,6 @@
 {
   "name": "@patheticgeek/go-npm",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Distribute and install Go binaries via NPM",
   "main": "index.js",
   "bin": {
@@ -15,9 +15,9 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gzuidhof/go-npm.git"
+    "url": "https://github.com/patheticGeek/go-npm.git"
   },
-  "homepage": "https://github.com/gzuidhof/go-npm",
+  "homepage": "https://github.com/patheticGeek/go-npm",
   "devDependencies": {
     "esbuild": "^0.12.17",
     "jest": "^24.5.0",
